@@ -1,22 +1,20 @@
 meteor-reactive-modal
 =====================
 
+This is an enhanced fork of pahans:reactive-modal due to lack of maintenance on the original repository.
+
+Key Differences
+===============
+ * Ability to reuse shareDialogInfo objects
+ * Fixed closure on button reactivity
+ * More reactive parts
+
 How to Use
 =========
-###install it from atmosphere
 
-#### For Meteor 0.9 or Later
+#### Install from atmosphere
 ```js
-meteor add pahans:reactive-modal
-```
-#### For older versions than 0.9
-
-```js 
-mrt add reactive-modal
-```
-### make sure you have bootstrap-3 or less-bootstrap-3 installed or bootstrap-3 from a other resource.
-```js
-mrt add bootstrap-3
+meteor add jchristman:reactive-modal
 ```
 ###Init your bootstrap modal 
 a meteor template is the body of your modal
@@ -32,10 +30,11 @@ Meteor.startup(function(){
   var shareDialogInfo = {
     template: Template.appShareDialog,
     title: "Share the app",
-    modalDialogClass: "share-modal-dialog", //optional
-    modalBodyClass: "share-modal-body", //optional
-    modalFooterClass: "share-modal-footer",//optional
-    removeOnHide: true, //optional. If this is true, modal will be removed from DOM upon hiding
+    doc: {}, // optional data context.
+    modalDialogClass: "share-modal-dialog", // optional
+    modalBodyClass: "share-modal-body", // optional
+    modalFooterClass: "share-modal-footer", // optional
+    removeOnHide: true, // optional. If this is true, modal will be removed from DOM upon hiding
     buttons: {
       "cancel": {
         class: 'btn-danger',
@@ -74,6 +73,7 @@ rd.show();
 ```js
 rd.hide();
 ```
+
 ### capture modal html element
 ```javascript
   //modalTarget contains the html
@@ -103,9 +103,3 @@ rd.buttons.ok.on('click', function(button){
 
 ### License
 MIT
-
-
-
-
-
-
