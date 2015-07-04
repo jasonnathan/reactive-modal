@@ -43,7 +43,8 @@ Meteor.startup(function(){
       "ok": {
         closeModalOnClick: false, // if this is false, dialog doesnt close automatically on click
         class: 'btn-info',
-        label: 'Ok'
+        label: 'Ok',
+        iconClass: 'glyphicon glyphicon-ok' //optional. Defines a icon before the button label. 
       }
 
     },
