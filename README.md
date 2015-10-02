@@ -37,6 +37,11 @@ Meteor.startup(function(){
     modalFooterClass: "share-modal-footer", // optional
     removeOnHide: true, // optional. If this is true, modal will be removed from DOM upon hiding
     hideCloseButton=true, // optional. If this true, the modal header will not show the &times; close button
+    modalOptions: { // optional. Pass - through of the Boostrap Modal options object on initialisation
+      keyboard: false,
+      backdrop: 'static',
+      show: false
+      }, 
     buttons: {
       "cancel": {
         class: 'btn-danger',
