@@ -8,6 +8,7 @@ Key Differences
  * Ability to reuse shareDialogInfo objects
  * Fixed closure on button reactivity
  * More reactive parts
+ * hideCloseButton option
 
 How to Use
 =========
@@ -35,6 +36,7 @@ Meteor.startup(function(){
     modalBodyClass: "share-modal-body", // optional
     modalFooterClass: "share-modal-footer", // optional
     removeOnHide: true, // optional. If this is true, modal will be removed from DOM upon hiding
+    hideCloseButton=true, // optional. If this true, the modal header will not show the &times; close button
     buttons: {
       "cancel": {
         class: 'btn-danger',
